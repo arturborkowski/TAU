@@ -2,6 +2,7 @@ package Zad01;
 
 public class Calculator {
 	
+	public Calculator(){};
 
 	public int add(int a, int b) {
 		return a + b;
@@ -17,9 +18,5 @@ public class Calculator {
 	
 	public int div(int a, int b) {
 		return a / b;
-	}
-	
-	public boolean greater(int a, int b) {
-		return a > b;
 	}
 }
