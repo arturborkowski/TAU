@@ -16,13 +16,7 @@ public class Calculator {
 	}
 	
 	public int div(int a, int b) {
-		try {
-			return a / b;
-		}
-		catch (ArithmeticException e) {
-			return 0;
-		}
-		
+		return a / b;
 	}
 	
 	public boolean greater(int a, int b) {
