@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CalculatorTest" project="Lab01" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="Zad01.CalculatorTest" time="0.001">
+    <testcase name="subCheck" classname="Zad01.CalculatorTest" time="0.0"/>
+    <testcase name="zeroDivisionCheck" classname="Zad01.CalculatorTest" time="0.0"/>
+    <testcase name="greaterCheck" classname="Zad01.CalculatorTest" time="0.0"/>
+    <testcase name="addCheck" classname="Zad01.CalculatorTest" time="0.0"/>
+    <testcase name="divCheck" classname="Zad01.CalculatorTest" time="0.0"/>
+    <testcase name="multiCheck" classname="Zad01.CalculatorTest" time="0.0"/>
+  </testsuite>
+</testrun>

@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class CalculatorTest {
 	
-	private static final double DELTA = 1e-15;
+	private static final double DELTA = 0.001;
 
 	Calculator calculator = new Calculator();
 	
@@ -19,20 +19,20 @@ public class CalculatorTest {
 	
 	@Test
 	public void subCheck() {
-		double submission = calculator.sub(5, 3);
-		assertEquals(2, submission, DELTA);
+		double submission = calculator.sub(5.34, 3.21);
+		assertEquals(2.13, submission, DELTA);
 	}
 	
 	@Test
 	public void multiCheck() {
-		double multi = calculator.multi(5, 3);
-		assertEquals(15, multi, DELTA);
+		double multi = calculator.multi(5.3, 3.21);
+		assertEquals(17.013, multi, DELTA);
 	}
 	
 	@Test
 	public void divCheck() {
-		double division = calculator.div(5, 2);
-		assertEquals(2.5, division, DELTA);
+		double division = calculator.div(5.6, 2.8);
+		assertEquals(2, division, DELTA);
 	}
 	
 	@Test 
@@ -44,7 +44,7 @@ public class CalculatorTest {
 	@Test
 	public void zeroDivisionCheck() {
 		double zeroDiv = calculator.div(5, 0);
-		assertEquals(Double.POSITIVE_INFINITY, zeroDiv, DELTA);
+		assertEquals(0, zeroDiv, DELTA);
 	}
 	
 }

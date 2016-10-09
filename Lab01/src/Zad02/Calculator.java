@@ -16,7 +16,7 @@ public class Calculator {
 	}
 	
 	public double div(double a, double b) {
-		return a/b;
+		return a/b==Double.POSITIVE_INFINITY ? 0 : a/b;
 	}
 	
 	public boolean greater(double a, double b) {

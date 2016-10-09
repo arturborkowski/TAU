@@ -1,0 +1,12 @@
+package Zad03;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class LiczbaRzymskaTest {
+
+	@Test
+	public void toStiringCheck() {
+		assertEquals("C", new LiczbaRzymska(100));
+	}
+}
