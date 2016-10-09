@@ -1,0 +1,1 @@
+Artur Borkowski - testowanie automatyczne
