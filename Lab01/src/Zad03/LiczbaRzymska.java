@@ -27,7 +27,15 @@ public class LiczbaRzymska {
 	private int number;
 	
 	public LiczbaRzymska(int x){
-		this.number = x;
+		this.number = Math.abs(x);
+	}
+	
+	public LiczbaRzymska(double x){
+		this.number = Math.abs((int) x);
+	}
+	
+	public LiczbaRzymska(String x) {
+		this.number = Math.abs(Integer.parseInt(x));
 	}
 
 	@Override
