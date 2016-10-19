@@ -24,6 +24,8 @@ public class PsikusImplementacja implements Psikus {
 
 	@Override
 	public Integer hultajchochla(Integer liczba) throws NieudanyPsikusException {
+		double sign = Math.signum(liczba);
+		liczba = Math.abs(liczba);
 		String l = liczba.toString();
 				
 		if(l.length() <= 1) throw new NieudanyPsikusException();
@@ -46,7 +48,10 @@ public class PsikusImplementacja implements Psikus {
 			arr[char_x] = arr[char_y];
 			arr[char_y] = temp;
 			
-			return Integer.valueOf(new String(arr));
+			String result = new String(arr);
+			if(sign==-1.0F) result="-"+result;
+			
+			return Integer.valueOf(result);
 		}
 	}
 
@@ -71,24 +76,27 @@ public class PsikusImplementacja implements Psikus {
 			}
 		}
 		
-		// getting a random index to change
-		Collections.shuffle(charsToChange);
-		int random_char = charsToChange.get(0);
-		
-		StringBuilder result = new StringBuilder(liczba.toString());
-		switch(liczba_toArray[random_char]) {
-		case '3':
-			result.setCharAt(random_char, three_replacement);
-			break;
-		case '7':
-			result.setCharAt(random_char, seven_replacement);
-			break;
-		case '6':
-			result.setCharAt(random_char, six_replacement);
-			break;
+		if(!charsToChange.isEmpty()) {
+			// getting a random index to change
+			Collections.shuffle(charsToChange);
+			int random_char = charsToChange.get(0);
+			
+			StringBuilder result = new StringBuilder(liczba.toString());
+			switch(liczba_toArray[random_char]) {
+			case '3':
+				result.setCharAt(random_char, three_replacement);
+				break;
+			case '7':
+				result.setCharAt(random_char, seven_replacement);
+				break;
+			case '6':
+				result.setCharAt(random_char, six_replacement);
+				break;
+			}
+			
+			return Integer.valueOf(result.toString());
 		}
-		
-		return Integer.valueOf(result.toString());
+		else return liczba;
 	}
 
 }
