@@ -1,4 +1,4 @@
-package Zad_Gwiazdka;
+package Lab01;
 
 public class NieudanyPsikusException extends Exception {
 

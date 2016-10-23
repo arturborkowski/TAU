@@ -1,6 +1,6 @@
-package Zad02;
+package Lab01;
 
-public class Calculator {
+public class Calculator2 {
 	
 
 	public double add(double a, double b) {

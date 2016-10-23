@@ -1,4 +1,4 @@
-package Zad_Gwiazdka;
+package Lab01;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class PsikusImplementacja implements Psikus {
 
-	@Override
+	
 	public Integer cyfrokrad(Integer liczba) {
 		double sign = Math.signum(liczba);
 		liczba = Math.abs(liczba);
@@ -22,7 +22,7 @@ public class PsikusImplementacja implements Psikus {
 		return null;
 	}
 
-	@Override
+	
 	public Integer hultajchochla(Integer liczba) throws NieudanyPsikusException {
 		double sign = Math.signum(liczba);
 		liczba = Math.abs(liczba);
@@ -55,7 +55,7 @@ public class PsikusImplementacja implements Psikus {
 		}
 	}
 
-	@Override
+	
 	public Integer nieksztaltek(Integer liczba) {
 		
 		// replacement chars

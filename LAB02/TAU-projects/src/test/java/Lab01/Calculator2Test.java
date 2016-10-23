@@ -1,15 +1,15 @@
-package Zad02;
+package Lab01;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
 
 
 
-public class CalculatorTest {
+public class Calculator2Test {
 	
 	private static final double DELTA = 0.001;
 
-	Calculator calculator = new Calculator();
+	Calculator2 calculator = new Calculator2();
 	
 	@Test
 	public void addCheck() {

@@ -1,4 +1,4 @@
-package Zad_Gwiazdka;
+package Lab01;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

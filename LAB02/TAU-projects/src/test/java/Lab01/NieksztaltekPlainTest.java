@@ -1,4 +1,4 @@
-package Zad_Gwiazdka;
+package Lab01;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;

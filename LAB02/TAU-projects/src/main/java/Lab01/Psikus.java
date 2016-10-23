@@ -1,4 +1,4 @@
-package Zad_Gwiazdka;
+package Lab01;
 
 public interface Psikus {
 	Integer cyfrokrad(Integer liczba);

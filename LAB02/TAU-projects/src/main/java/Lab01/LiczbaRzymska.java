@@ -1,4 +1,4 @@
-package Zad03;
+package Lab01;
 
 import java.util.TreeMap;
 
