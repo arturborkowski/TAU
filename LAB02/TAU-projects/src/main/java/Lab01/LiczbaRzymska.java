@@ -25,28 +25,37 @@ public class LiczbaRzymska {
     }
 
 	private int number;
+	private String romanNumber;
 	
 	public LiczbaRzymska(int x){
 		this.number = Math.abs(x);
+		this.romanNumber = transform();
+		
 	}
 	
 	public LiczbaRzymska(double x){
 		this.number = Math.abs((int) x);
+		this.romanNumber = transform();
 	}
 	
 	public LiczbaRzymska(String x) {
 		this.number = Math.abs(Integer.parseInt(x));
+		this.romanNumber = transform();
 	}
 
 	@Override
 	public String toString() {
+		return romanNumber;
+	};
+	
+	private String transform() {
 		int l =  map.floorKey(number);
         if ( number == l ) {
             return map.get(number);
         }
         number = number-l;
-        return map.get(l) + toString();
-	};
+        return map.get(l) + transform();
+	}
 	
 	
 	
