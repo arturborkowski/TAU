@@ -4,6 +4,10 @@
   <artifactId>TAU-projects</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Testowanie Automatyczne</name>
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   <dependencies>
   	<dependency>
   		<groupId>junit</groupId>
