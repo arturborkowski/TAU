@@ -44,7 +44,7 @@ public class MockitoAppTest {
 	public void testSendException() throws MalformedRecipientException {
 		Mockito.when(mock.send("", "Hello!"))
 		.thenThrow(new MalformedRecipientException());
-		messenger.sendMessage("", "Hello!");
+		assertEquals(2, messenger.sendMessage("", "Hello!"));
 	}
 	
 	@Test

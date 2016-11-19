@@ -86,7 +86,7 @@ public class EasyMockAppTest {
 			.times(1);
 		
 		replay(myMessService);
-		myMess.sendMessage("", "Hello!");	
+		assertEquals(2,myMess.sendMessage("", "Hello!"));
 		verify(myMessService);
 	}
 
