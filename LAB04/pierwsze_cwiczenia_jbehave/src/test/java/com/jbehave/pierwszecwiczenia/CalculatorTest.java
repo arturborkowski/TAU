@@ -1,51 +1,34 @@
 package com.jbehave.pierwszecwiczenia;
 
-import static org.junit.Assert.*;
+import org.jbehave.core.configuration.Configuration;
+import org.jbehave.core.configuration.MostUsefulConfiguration;
+import org.jbehave.core.io.LoadFromClasspath;
+import org.jbehave.core.junit.JUnitStory;
+import org.jbehave.core.reporters.Format;
+import org.jbehave.core.reporters.StoryReporterBuilder;
+import org.jbehave.core.steps.InjectableStepsFactory;
+import org.jbehave.core.steps.InstanceStepsFactory;
 
-import org.junit.Test;
 
-import com.jbehave.pierwszecwiczenia.Calculator;
+public class CalculatorTest extends JUnitStory{
 
+	// Here we specify the configuration, starting from default
+		// MostUsefulConfiguration, and changing only what is needed
+		@Override
+		public Configuration configuration() {
+			return new MostUsefulConfiguration()
+			// where to find the stories
+					.useStoryLoader(new LoadFromClasspath(this.getClass()))
+					// CONSOLE and TXT reporting
+					.useStoryReporterBuilder(
+							new StoryReporterBuilder().withDefaultFormats()
+									.withFormats(Format.CONSOLE, Format.TXT));
+		}
 
-
-public class CalculatorTest {
-
-	Calculator calculator = new Calculator();
-	
-	@Test
-	public void addCheck() {
-		int sum = calculator.add(1, 2);
-		assertEquals(3, sum);
-	}
-	
-	@Test
-	public void subCheck() {
-		int submission = calculator.sub(5, 3);
-		assertEquals(2, submission);
-	}
-	
-	@Test
-	public void multiCheck() {
-		int multi = calculator.multi(5, 3);
-		assertEquals(15, multi);
-	}
-	
-	@Test
-	public void divCheck() {
-		int division = calculator.div(5, 3);
-		assertEquals(1, division);
-	}
-	
-	@Test 
-	public void greaterCheck() {
-		boolean greater = calculator.greater(1, 5);
-		assertFalse(greater);
-	}
-	
-	@Test
-	public void zeroDivisionCheck() {
-		int zeroDiv = calculator.div(5, 0);
-		assertEquals(0, zeroDiv);
-	}
-	
+		// Here we specify the steps classes
+		@Override
+		public InjectableStepsFactory stepsFactory() {
+			// varargs, can have more that one steps classes
+			return new InstanceStepsFactory(configuration(), new CalculatorSteps());
+		}
 }

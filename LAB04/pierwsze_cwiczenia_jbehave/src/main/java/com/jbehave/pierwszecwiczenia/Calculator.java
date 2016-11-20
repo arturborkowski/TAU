@@ -2,20 +2,22 @@ package com.jbehave.pierwszecwiczenia;
 
 public class Calculator {
 	
-
-	public int add(int a, int b) {
+	private int a;
+	private int b;
+	
+	public int add() {
 		return a + b;
 	}
 	
-	public int sub(int a, int b) {
+	public int sub() {
 		return a - b;
 	}
 	
-	public int multi(int a, int b) {
+	public int multi() {
 		return a * b;
 	}
 	
-	public int div(int a, int b) {
+	public int div() {
 		try {
 			return a / b;
 		}
@@ -25,7 +27,25 @@ public class Calculator {
 		
 	}
 	
-	public boolean greater(int a, int b) {
+	public boolean greater() {
 		return a > b;
+	}
+
+	
+	
+	public int getA() {
+		return a;
+	}
+
+	public void setA(int a) {
+		this.a = a;
+	}
+
+	public int getB() {
+		return b;
+	}
+
+	public void setB(int b) {
+		this.b = b;
 	}
 }
