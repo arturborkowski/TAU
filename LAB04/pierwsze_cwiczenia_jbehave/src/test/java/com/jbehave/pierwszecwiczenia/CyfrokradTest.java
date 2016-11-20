@@ -1,9 +1,11 @@
-package Lab01;
+package com.jbehave.pierwszecwiczenia;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
 import org.junit.Test;
+
+import com.jbehave.pierwszecwiczenia.PsikusImplementacja;
 
 public class CyfrokradTest {
 

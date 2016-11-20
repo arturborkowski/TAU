@@ -1,4 +1,4 @@
-package Lab01;
+package com.jbehave.pierwszecwiczenia;
 
 public interface Psikus {
 	Integer cyfrokrad(Integer liczba);

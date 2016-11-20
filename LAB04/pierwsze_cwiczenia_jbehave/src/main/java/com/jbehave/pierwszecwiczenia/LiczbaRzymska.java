@@ -1,4 +1,4 @@
-package Lab01;
+package com.jbehave.pierwszecwiczenia;
 
 import java.util.TreeMap;
 

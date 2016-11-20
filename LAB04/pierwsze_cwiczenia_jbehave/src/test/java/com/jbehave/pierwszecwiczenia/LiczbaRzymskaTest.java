@@ -1,7 +1,10 @@
-package Lab01;
+package com.jbehave.pierwszecwiczenia;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
+
+import com.jbehave.pierwszecwiczenia.LiczbaRzymska;
 
 public class LiczbaRzymskaTest {
 

@@ -1,4 +1,4 @@
-package Lab01;
+package com.jbehave.pierwszecwiczenia;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
@@ -6,6 +6,9 @@ import static org.junit.Assert.*;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
+import com.jbehave.pierwszecwiczenia.NieudanyPsikusException;
+import com.jbehave.pierwszecwiczenia.PsikusImplementacja;
 
 public class HultajchochlaTest {
 

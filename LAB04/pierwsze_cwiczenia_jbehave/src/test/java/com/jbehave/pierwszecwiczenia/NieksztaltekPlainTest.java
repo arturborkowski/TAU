@@ -1,4 +1,4 @@
-package Lab01;
+package com.jbehave.pierwszecwiczenia;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -10,6 +10,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
+
+import com.jbehave.pierwszecwiczenia.PsikusImplementacja;
 
 public class NieksztaltekPlainTest {
 
