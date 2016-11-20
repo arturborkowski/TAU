@@ -10,7 +10,7 @@ import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 
 
-public class CalculatorTest extends JUnitStory{
+public class Calculator2Test extends JUnitStory{
 
 	// Here we specify the configuration, starting from default
 		// MostUsefulConfiguration, and changing only what is needed
