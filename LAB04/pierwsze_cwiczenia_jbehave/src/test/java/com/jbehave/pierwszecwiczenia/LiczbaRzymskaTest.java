@@ -10,7 +10,7 @@ import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 
 
-public class Calculator2Test extends JUnitStory{
+public class LiczbaRzymskaTest extends JUnitStory{
 
 	// Here we specify the configuration, starting from default
 		// MostUsefulConfiguration, and changing only what is needed
@@ -29,6 +29,6 @@ public class Calculator2Test extends JUnitStory{
 		@Override
 		public InjectableStepsFactory stepsFactory() {
 			// varargs, can have more that one steps classes
-			return new InstanceStepsFactory(configuration(), new Calculator2Steps());
+			return new InstanceStepsFactory(configuration(), new LiczbaRzymskaSteps());
 		}
 }
