@@ -58,6 +58,7 @@ public class PsikusImplementacja implements Psikus {
 	}
 
 	
+	// metoda zamienia jedno losowe pojawienie się cyfry 3, 7 lub 6 na odpowiednio 8, 1 lub 9.
 	public Integer nieksztaltek(Integer liczba) {
 		
 		// replacement chars

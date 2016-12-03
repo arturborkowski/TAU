@@ -12,6 +12,7 @@ public class PsikusSteps {
 
 	private PsikusImplementacja psikusImplementacja;
 	private Integer result_container;
+	private String error_message;
 	
 	@Given("a psikus implementacja")
 	public void psikusSetUp() {
@@ -30,17 +31,18 @@ public class PsikusSteps {
 		assertEquals(length, Integer.toString(result_container).length());
 	}
 	
-	@Then("the result should be null")
+	@Then("the result should not be returned")
 	public void checkNull() {
 		assertNull(result_container);
 	}
 	
-	@Then("the result should be negative")
+	@Then("the returned value should be negative")
 	public void checkNegative() {
 		assertThat(Math.signum(result_container), is(equalTo(-1.0F)));;
 	}
 	
-	@Then("the result should be an integer")
+	
+	@Then("the returned type should be an integer")
 	public void checkType() {
 		assertThat(result_container, isA(Integer.class));
 	}
@@ -49,8 +51,12 @@ public class PsikusSteps {
 	/* HULTAJCHOCHLA TESTING */
 	
 	@When("performing a method hultajchochla with argument $argument")
-	public void performHultajchochla(int liczba) throws NieudanyPsikusException{
-		result_container = psikusImplementacja.hultajchochla(liczba);
+	public void performHultajchochla(int liczba) {
+		try {
+			result_container = psikusImplementacja.hultajchochla(liczba);
+		} catch (NieudanyPsikusException e) {
+			error_message = "An error have occured.";
+		}
 	}
 
 	@Then("the result should be $result")
@@ -68,10 +74,36 @@ public class PsikusSteps {
 		}
 		assertEquals(result, sum);
 	}
-	
 
-	
-	
 
+	@Then("the error message should be generated")
+	public void checkErrorMessage(){
+		assertNotNull(error_message);
+	}
+	
+	
+	/* NIEKSZTAŁTEK TESTING */
+	
+	@When("performing a method nieksztaltek with argument $argument")
+	public void performNieksztaltek(int liczba) {
+		result_container = psikusImplementacja.nieksztaltek(liczba);
+	}
+	
+	@Then("the changed value should be $result")
+	public void checkChangingNumber(int result) {
+		assertEquals(result,result_container.intValue());
+	}
+	
+	@Then("the sum of changed digits should be $result")
+	public void checkSumOfChangedNumber(int result) {
+		int num = result_container;
+		int sum = 0;
+		while(num > 0){
+			sum+=num%10;
+			num/=10;
+		}
+		assertEquals(result, sum);
+	}
+	
 	
 }
