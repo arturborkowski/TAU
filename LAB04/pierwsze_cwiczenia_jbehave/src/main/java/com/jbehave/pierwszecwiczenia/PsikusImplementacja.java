@@ -7,6 +7,7 @@ import java.util.Random;
 public class PsikusImplementacja implements Psikus {
 
 	
+	// metoda wycinająca z liczby losową cyfrę
 	public Integer cyfrokrad(Integer liczba) {
 		double sign = Math.signum(liczba);
 		liczba = Math.abs(liczba);
@@ -23,6 +24,7 @@ public class PsikusImplementacja implements Psikus {
 	}
 
 	
+	// metoda zamieniające dwie losowe cyfry w liczbie
 	public Integer hultajchochla(Integer liczba) throws NieudanyPsikusException {
 		double sign = Math.signum(liczba);
 		liczba = Math.abs(liczba);
