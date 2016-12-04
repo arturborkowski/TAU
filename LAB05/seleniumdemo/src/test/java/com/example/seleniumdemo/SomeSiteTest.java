@@ -27,7 +27,7 @@ public class SomeSiteTest {
 	@BeforeClass
 	public static void driverSetup() {
 		// ChromeDrirver, FireforxDriver, ...
-		System.setProperty("webdriver.chrome.driver", "C:/Users/Artek/Documents/uczelnia/_semestr7/TAU/Lab05/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:/Users/Artek/Documents/uczelnia/_semestr7/TAU/Lab05/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
@@ -49,7 +49,7 @@ public class SomeSiteTest {
 	    assertNotNull(screenshot);
 
 		try {
-			FileUtils.copyFile(screenshot, new File("/Users/kuba/Tmp/polsat.png"));
+			FileUtils.copyFile(screenshot, new File("C:/Users/Artek/Documents/uczelnia/_semestr7/TAU/Lab05/Tmp/polsat.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			assertTrue(false);

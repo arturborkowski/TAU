@@ -36,7 +36,7 @@ public class TelemanWebTest extends JUnitStories {
     private ContextView contextView = new LocalFrameContextView().sized(500, 100);
 
     public TelemanWebTest() {
-    	System.setProperty("webdriver.chrome.driver", "/Users/kuba/Dev/chromedriver/chromedriver");
+    	System.setProperty("webdriver.chrome.driver", "C:/Users/Artek/Documents/uczelnia/_semestr7/TAU/Lab05/chromedriver.exe");
 	}
 
 	@Override
