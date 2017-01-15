@@ -16,7 +16,7 @@ public class PocztaSteps {
 		this.pages = pages;
 	}
 	
-/*	@Given("user is on Home page")
+	@Given("user is on Home page")
     public void userIsOnHomePage(){        
         pages.home().open();        
     }
@@ -46,7 +46,7 @@ public class PocztaSteps {
     public void receivedIsDisplayed(){
     	WebElement e = pages.home().findElement(By.cssSelector("body > div.AppContainer.ng-scope > div > div.AppMain > div > div > div > div.list-stream-actions__wrap.ng-scope > div > div > div.list-stream-actions__name > span:nth-child(1)"));
     	assertNotNull(e);
-    }*/
+    }
     
     @Given("user in on Google search page")
     public void userIsInGoogle(){
@@ -71,8 +71,8 @@ public class PocztaSteps {
     
     @Then("user is navigated out from Google")
     public void outFromGoogle(){
-    	WebElement e = pages.google().findElement(By.cssSelector("#logo > img"));
-    	assertNull(e);
+    	String title = pages.google().getTitle();
+    	assertTrue(!title.toLowerCase().contains("google"));
     }
     
 

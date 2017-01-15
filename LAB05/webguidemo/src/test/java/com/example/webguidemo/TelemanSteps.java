@@ -1,11 +1,10 @@
 package com.example.webguidemo;
 
+import static org.junit.Assert.assertEquals;
+
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
-import org.openqa.selenium.By;
-
-import static org.junit.Assert.*;
 
 public class TelemanSteps {
 	

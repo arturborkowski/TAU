@@ -1,4 +1,10 @@
+Given user is on Home page
+When user logs in using credentials
+Then received messages are shown
 
+Given user is in mailbox
+When user sends a message
+Then received view is displayed
 
 Given user in on Google search page
 When user searches for graphics by a value selenium

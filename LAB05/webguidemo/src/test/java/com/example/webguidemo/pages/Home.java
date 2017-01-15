@@ -12,7 +12,7 @@ public class Home extends WebDriverPage {
 		super(driverProvider);
 	}
 
-	private final static String SPORT_LINK = "//*[@id='main-menu']/a[4]";
+	/*private final static String SPORT_LINK = "//*[@id='main-menu']/a[4]";*/
 	private final static String SPORT_LINK_TEXT = "SPORT";
 
 	
