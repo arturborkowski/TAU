@@ -16,7 +16,6 @@ public class Mailbox extends WebDriverPage {
 
 	public Mailbox(WebDriverProvider driverProvider) {
 		super(driverProvider);
-		// TODO Auto-generated constructor stub
 	}
 
 	
