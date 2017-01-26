@@ -7,9 +7,14 @@ insert into car (brand, model, production_year, person_id) values ("Fiat","Seice
 insert into car (brand, model, production_year, person_id) values ("Mazda","6",2006,2);
 insert into car (brand, model, production_year, person_id) values ("VW","Golf",1998,3);
 
-insert into car_repair (name_of_service,price, car_id) values ("Wymiana opon",100.00,1);
-insert into car_repair (name_of_service,price, car_id) values ("Powłoka antykorozyjna",450.00,1);
-insert into car_repair (name_of_service,price, car_id) values ("Wymiana świec",350.00,2);
-insert into car_repair (name_of_service,price, car_id) values ("Wymiana uszczelki p/głowicą",900.00,4);
-insert into car_repair (name_of_service,price, car_id) values ("Wymiana fitra oleju",40.00,4);
-insert into car_repair (name_of_service,price, car_id) values ("Regeneracja sprzęgła",750.00,3);
+insert into transaction (id) values (1);
+insert into transaction (id) values (2);
+insert into transaction (id) values (3);
+insert into transaction (id) values (4);
+
+insert into car_repair (name_of_service,price, car_id, transaction_id) values ("Wymiana opon",100.00,1,1);
+insert into car_repair (name_of_service,price, car_id, transaction_id) values ("Powłoka antykorozyjna",450.00,1,1);
+insert into car_repair (name_of_service,price, car_id, transaction_id) values ("Wymiana świec",350.00,2,2);
+insert into car_repair (name_of_service,price, car_id, transaction_id) values ("Wymiana uszczelki p/głowicą",900.00,4,3);
+insert into car_repair (name_of_service,price, car_id, transaction_id) values ("Wymiana fitra oleju",40.00,4,3);
+insert into car_repair (name_of_service,price, car_id, transaction_id) values ("Regeneracja sprzęgła",750.00,3,4);

@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class CarRepair {
 
@@ -17,8 +19,15 @@ public class CarRepair {
 	@ManyToOne
 	@JoinColumn(name="car_id")
 	private Car car;
+	
+	@ManyToOne
+	@JoinColumn(name="transaction_id")
+	@JsonIgnore
+	private Transaction transaction;
 	private double price;
 	private String nameOfService;
+	
+	
 	
 	
 	public CarRepair() {
@@ -26,21 +35,27 @@ public class CarRepair {
 	}
 
 
-	public CarRepair(Integer id, Car car, double price, String nameOfService) {
+	public CarRepair(Car car, Transaction transaction, double price,
+			String nameOfService) {
+		super();
+		this.car = car;
+		this.transaction = transaction;
+		this.price = price;
+		this.nameOfService = nameOfService;
+	}
+
+
+	public CarRepair(Integer id, Car car, Transaction transaction,
+			double price, String nameOfService) {
 		super();
 		this.id = id;
 		this.car = car;
+		this.transaction = transaction;
 		this.price = price;
 		this.nameOfService = nameOfService;
 	}
 
 
-	public CarRepair(Car car, double price, String nameOfService) {
-		super();
-		this.car = car;
-		this.price = price;
-		this.nameOfService = nameOfService;
-	}
 
 
 	public Integer getId() {
@@ -82,13 +97,26 @@ public class CarRepair {
 		this.nameOfService = nameOfService;
 	}
 
+	
+	
+
+	public Transaction getTransaction() {
+		return transaction;
+	}
+
+
+	public void setTransaction(Transaction transaction) {
+		this.transaction = transaction;
+	}
+
 
 	@Override
 	public String toString() {
-		return "CarRepair [id=" + id + ", car=" + car + ", price=" + price
-				+ ", nameOfService=" + nameOfService + "]";
+		return "CarRepair [id=" + id + ", car=" + car + ", transaction="
+				+ transaction + ", price=" + price + ", nameOfService="
+				+ nameOfService + "]";
 	}
-	
+
 	
 	
 	

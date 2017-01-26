@@ -4,8 +4,10 @@ import java.util.List;
 
 import myrestproject.model.Car;
 import myrestproject.model.CarRepair;
+import myrestproject.model.Transaction;
 import myrestproject.service.CarRepairService;
 import myrestproject.service.CarService;
+import myrestproject.service.TransactionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,6 +25,8 @@ public class CarRepairsRestController {
 	private CarRepairService repairService;
 	@Autowired
 	private CarService carService;
+	@Autowired
+	private TransactionService transService;
 
 	@GetMapping("/allrepairs")
 	public ResponseEntity<List<CarRepair>> getAll(){
@@ -50,10 +54,13 @@ public class CarRepairsRestController {
 	public ResponseEntity<CarRepair> addRepair(
 			@RequestParam double price, 
 			@RequestParam String name, 
-			@RequestParam int carId) {
+			@RequestParam int carId,
+			@RequestParam int transId) {
 		Car car = carService.findById(carId);
+		Transaction tr = transService.getOne(transId);
 		if(car != null) {
-			CarRepair cr = new CarRepair(car, price, name);
+			if(tr == null) tr = new Transaction();
+			CarRepair cr = new CarRepair(car,tr, price, name);
 			repairService.addRepair(cr);
 			return new ResponseEntity<CarRepair>(cr,HttpStatus.OK);
 		}
