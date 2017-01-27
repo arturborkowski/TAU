@@ -1,4 +1,4 @@
-package myrestproject;
+package myrestproject.builders;
 
 import myrestproject.model.Person;
 
