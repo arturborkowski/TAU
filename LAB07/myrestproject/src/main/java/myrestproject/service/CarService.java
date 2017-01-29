@@ -36,6 +36,10 @@ public class CarService {
 		carRepository.delete(id);
 	}
 	
+	public void deleteAll() {
+		carRepository.deleteAll();
+	}
+	
 	public Car findById(int id) {
 		return carRepository.findOne(id);
 	}

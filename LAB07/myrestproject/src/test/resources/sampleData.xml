@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<Person id="1" name="Ziutek Nowak" yob="1965" />
+	<Person id="2" title="Karolina Mak" yob="1988" />
+</dataset>

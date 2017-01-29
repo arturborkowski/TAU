@@ -4,6 +4,8 @@ import static com.jayway.restassured.RestAssured.given;
 import static com.jayway.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.is;
+
+
 import myrestproject.builders.PersonBuilder;
 import myrestproject.model.Person;
 import myrestproject.service.PersonService;
@@ -16,12 +18,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.http.HttpStatus;
+import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 
+import com.github.springtestdbunit.DbUnitTestExecutionListener;
+import com.github.springtestdbunit.annotation.DatabaseOperation;
+import com.github.springtestdbunit.annotation.DatabaseSetup;
+import com.github.springtestdbunit.annotation.DatabaseTearDown;
 import com.jayway.restassured.http.ContentType;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=WebEnvironment.DEFINED_PORT)
+@TestExecutionListeners({ DependencyInjectionTestExecutionListener.class,
+    DbUnitTestExecutionListener.class })
+@DatabaseSetup("src/test/resources/sampleData.xml")
+@DatabaseTearDown(type=DatabaseOperation.DELETE_ALL)
 public class PersonControllerIT {
 	
 	private static final String NAME_FIELD = "name";
@@ -66,6 +78,16 @@ public class PersonControllerIT {
 		personService.addPerson(secondPerson);
 	}
 	
+	/************ UnitDB Tests *************/
+	/*@Test
+	public void testFind() throws Exception {
+		List<Person> personList = personService.getAllPersons();
+		assertEquals(2, personList.size());
+		assertEquals("Ziutek Nowak", personList.get(0).getName());
+	}	*/
+	
+	
+	/************ REST-assured tests ****************/
 	@Test
 	public void getPersonsShouldReturnBothPersons() {
 	  when()
